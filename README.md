@@ -347,20 +347,25 @@ Test api endpoint:
 }
 ```
 
-### get app pod name
+### test your first app
+
++ get app pod name
 
 ```
 [k8s-master]$ kubectl get pods
 kubernetes-bootcamp-6c74779b45-ljdg7
 ```
 
++ test
 ```
 [k8s-master]$  curl http://localhost:8001/api/v1/proxy/namespaces/default/pods/kubernetes-bootcamp-6c74779b45-ljdg7/
 
 Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-6c74779b45-ljdg7 | v=1
 ```
 
-### export deployment file
+### other commands
+
+#### export deployment file
 
 ```
 [k8s-master]$ kubectl get -o=name pvc,configmap,serviceaccount,secret,ingress,service,deployment,statefulset,hpa,job,cronjob
@@ -418,7 +423,7 @@ spec:
 status: {}
 ```
 
-### delete pods and deployments
+#### delete pods and deployments
 delete all 
 
 ```
@@ -432,3 +437,5 @@ delete one
 ```
 [k8s-master]$ kubectl delete deployment kubernetes-bootcamp
 ```
+
+#### more
